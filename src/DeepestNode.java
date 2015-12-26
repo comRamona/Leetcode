@@ -28,6 +28,7 @@ public class DeepestNode {
             System.out.print(l + " ");
     }
 
+    //list with nodes
     public List<Integer> deepestNode(Node node) {
         Integer max = 0;
         List<Integer> list = new LinkedList<Integer>();
