@@ -7,7 +7,7 @@
  * Given 1->1->1->2->3, return 2->3.
  */
 public class RemoveAllDuplicateLL {
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
         ListNode t = new ListNode(0);
         t.next = head;
 
@@ -25,5 +25,14 @@ public class RemoveAllDuplicateLL {
         }
 
         return t.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode a = new ListNode(1);
+        a.next = new ListNode(1);
+        a.next.next = new ListNode(2);
+        a.next.next.next = new ListNode(3);
+        ListNode b = deleteDuplicates(a);
+        System.out.println(b.val);
     }
 }

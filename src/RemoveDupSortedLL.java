@@ -3,7 +3,7 @@
  * Most efficient solution
  */
 public class RemoveDupSortedLL {
-    public ListNode deleteDuplicates(ListNode head) {
+    public static ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null)
             return head;
 
@@ -18,5 +18,14 @@ public class RemoveDupSortedLL {
         }
 
         return head;
+    }
+
+    public static void main(String[] args) {
+        ListNode a = new ListNode(1);
+        a.next = new ListNode(1);
+        a.next.next = new ListNode(2);
+        a.next.next.next = new ListNode(3);
+        ListNode b = deleteDuplicates(a);
+        System.out.println(b.val);
     }
 }
