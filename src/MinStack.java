@@ -7,7 +7,7 @@
  * getMin() -- Retrieve the minimum element in the stack.
  */
 
-class MinStack {
+public class MinStack {
     Integer min = null;
     Node top = null;
 
