@@ -26,4 +26,18 @@ public class LevelDepths {
         getLevels(lists, root.left, lvl + 1);
         getLevels(lists, root.right, lvl + 1);
     }
+
+    public void LevelOrder(Node root)  //using BFS
+    {
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node n = queue.getFirst();
+            queue.removeFirst();
+            System.out.print(n.data + " ");
+            if (n.left != null) queue.add(n.left);
+            if (n.right != null) queue.add(n.right);
+        }
+
+    }
 }
