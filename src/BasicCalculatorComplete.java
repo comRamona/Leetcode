@@ -2,6 +2,9 @@
 Basic calculator to perfom +,-,*,/ keeping in mind precedence and also (, )
 */
 public class BasicCalculatorComplete {
+    /*
+    Returns true if op2 has higher or equal precedence compared to op1
+    */
     public boolean hasPrecedence(char op1, char op2){
     if (op2 == '(' || op2 == ')')
         return false;
