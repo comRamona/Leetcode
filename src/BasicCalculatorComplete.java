@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
 Basic calculator to perfom +,-,*,/ keeping in mind precedence and also (, )
 */
@@ -8,10 +10,7 @@ public class BasicCalculatorComplete {
     public boolean hasPrecedence(char op1, char op2){
     if (op2 == '(' || op2 == ')')
         return false;
-    if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
-        return false;
-    else
-        return true;
+        return !((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'));
     }
      public int calculate(String s) {
 
