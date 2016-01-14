@@ -32,6 +32,18 @@ public class KthLargest {
 		return j;
         
     }
+      public int partition2(int[] arr,int lo,int hi){
+        int p = arr[hi];
+		int i = lo;
+		
+		for(int j=lo;j<=hi-1;j++)
+			if(arr[j]>=p){
+				swap(arr,i,j);
+				i++;
+			}
+		swap(arr,i,hi);
+		return i;
+    }
     public void swap(int[] nums,int i,int j){
         int aux=nums[i];
         nums[i]=nums[j];
