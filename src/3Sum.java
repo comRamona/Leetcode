@@ -33,7 +33,9 @@ public class 3Sum {
                     end--;
                 
                 }
-                else start++;
+                else {
+                    start++;
+                }
             }
         }
         return list;
