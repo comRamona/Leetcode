@@ -24,10 +24,10 @@ public class 3Sum {
                     start++;
                     end--;
                     while (start < end && nums[end] == nums[end + 1])  //avoid duplicates
-					             	end--;
+                        end--;
  
-				          	while (start < end && nums[start] == nums[start - 1])
-					             	start++;
+		    while (start < end && nums[start] == nums[start - 1])
+		        start++;
                 }
                 else if(a+b+c>0) {
                     end--;
