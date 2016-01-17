@@ -48,6 +48,7 @@ public class MaximumSubarray {
     }
 
     public static int maxSequenceSum(int[] arr) {
+        //Kadane's Algorithm
         int maxSoFar = arr[0], maxEndingHere = arr[0];
 
         for (int i = 1; i < arr.length; i++) {
@@ -65,6 +66,7 @@ public class MaximumSubarray {
     }
 
     public int maxSubArray(int[] nums) {
+        //DP
         int[] dp = new int[nums.length];
         for (int i = 0; i < dp.length; i++) {
             dp[i] = nums[i];
