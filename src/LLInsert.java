@@ -1,26 +1,17 @@
-class Node{
-	int data;
-	Node next;
-	Node(int d){
-        data=d;
-        next=null;
-    }
-	
-}
+
 public class LLInsert{
-	public static  Node insert(Node head,int data)
-	{
+    public static ListNode insert(ListNode head, int data) {
   	//Complete this method
         if(head==null){
-            head=new Node(data);
+            head = new ListNode(data);
         }
         else
             {
-            Node p=head;
+                ListNode p = head;
             while(p.next!=null){
                 p=p.next;
             }
-            p.next=new Node(data);
+                p.next = new ListNode(data);
         }
         return head;
 	}

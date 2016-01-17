@@ -10,10 +10,11 @@
  */
 public class MaximumSubarray {
     public static void main(String[] args) {
-        int[] intArr = {3, -1, -1, -1, -1, -1, 2, 0, 0, 0};
+        int[] intArr = {-3, -1, -5, -2, 4};
         //int[] intArr = {-1, 3, -5, 4, 6, -1, 2, -7, 13, -3};
         //int[] intArr={-6,-2,-3,-4,-1,-5,-5};
-        findMaxSubArray(intArr);
+        int x = maxSequenceSum(intArr);
+        System.out.println(x);
     }
 
     public static void findMaxSubArray(int[] inputArray) {
@@ -46,6 +47,23 @@ public class MaximumSubarray {
         System.out.println("Max end index   : " + maxEndIndex);
     }
 
+    public static int maxSequenceSum(int[] arr) {
+        int maxSoFar = arr[0], maxEndingHere = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            /* calculate maxEndingHere */
+            if (maxEndingHere < 0)
+                maxEndingHere = arr[i];
+            else
+                maxEndingHere += arr[i];
+
+            /* calculate maxSoFar */
+            if (maxEndingHere >= maxSoFar)
+                maxSoFar = maxEndingHere;
+        }
+        return maxSoFar;
+    }
+
     public int maxSubArray(int[] nums) {
         int[] dp = new int[nums.length];
         for (int i = 0; i < dp.length; i++) {
@@ -59,3 +77,5 @@ public class MaximumSubarray {
         return max;
     }
 }
+
+
