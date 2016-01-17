@@ -2,10 +2,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by rama on 05/01/16.
- * Lovely Dynammic Programming
+ * Created by rama on 17/01/16.
  */
-public class MinCoins {
+public class CombSum {
     public static List calc(int[] coins, int s) {
         int nr = coins.length - 1;
         int[] min = new int[s + 1];
@@ -19,10 +18,8 @@ public class MinCoins {
         for (int sum = 1; sum <= s; sum++)
             for (int val = 0; val <= nr; val++) {
                 if (coins[val] <= sum)
-                    if (min[sum - coins[val]] + 1 < min[sum]
-                            && min[sum - coins[val]] != Integer.MAX_VALUE) {
-                        min[sum] = min[sum - coins[val]] + 1;
-                        lists[sum].clear();
+                    if (min[sum - coins[val]] != Integer.MAX_VALUE) {
+                        min[sum] = 0;
                         lists[sum].addAll(lists[sum - coins[val]]);
                         lists[sum].add(coins[val]);
                     }

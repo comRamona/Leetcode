@@ -9,17 +9,17 @@ import java.util.List;
 public class PowerSet {
     public static List<List<Integer>> subsets(int[] nums) {
         Arrays.sort(nums);
-        List<List<Integer>> allsubsets = getSubsets(nums, nums.length - 1);
+        List<List<Integer>> allsubsets = getSubsets(nums, 0);
         return allsubsets;
     }
 
     public static List<List<Integer>> getSubsets(int[] set, int index) {
         List<List<Integer>> allsubsets;
-        if (index < 0) {    //base case
+        if (index == set.length) {    //base case
             allsubsets = new ArrayList();
             allsubsets.add(new ArrayList<Integer>()); //emptyset
         } else {
-            allsubsets = getSubsets(set, index - 1);
+            allsubsets = getSubsets(set, index + 1);
             int item = set[index];
             List<List<Integer>> moresubsets = new ArrayList();
             for (List<Integer> subset : allsubsets) {
