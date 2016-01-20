@@ -19,4 +19,18 @@ public class PathSum {
 
         return helper(root.left, sum, curr) || helper(root.right, sum, curr);
     }
+
+    public boolean hasPathSum2(TreeNode root, int sum) {
+        if (root == null) return false;
+        return check(root, sum);
+    }
+
+    public boolean check(TreeNode root, int curr) {
+        if (root == null) {
+            return false;
+        }
+        if (root.left == null && root.right == null && curr - root.val == 0)
+            return true;
+        return check(root.left, curr - root.val) || check(root.right, curr - root.val);
+    }
 }

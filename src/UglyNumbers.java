@@ -21,4 +21,18 @@ public class UglyNumbers {
         System.out.println(fact);
         return fact <= 5;
     }
+
+    public boolean isUgly2(int num) {
+        if (num == 0) return false;
+        if (num == 1) return true;
+        int fact = 2;
+        while (num != 1) {
+
+            while (num % fact == 0)
+                num = num / fact;
+            fact++;
+            if (fact > 7) return false;
+        }
+        return true;
+    }
 }
