@@ -30,6 +30,31 @@ public class MinCoins {
         return lists[s];
     }
 
+    /**
+     *  Knapsack unbounded
+     *  for (int g=1;g<=b; g++)
+     {
+     for (int y=0;y<c.size(); y++)
+     {
+     if (c[y]>g) continue;
+     dp[g]=max(dp[g], c[y]+dp[g-c[y]]);
+     }
+     }
+     cout << dp[b] << '\n';} return 0;
+     */
+
+    /**
+     * Knapsack bounded 0,1
+     * for j from 0 to W do:
+     * m[0, j] := 0
+     * <p>
+     * for i from 1 to n do:
+     * for j from 0 to W do:
+     * if w[i-1] <= j then:
+     * m[i, j] := max(m[i-1, j], m[i-1, j-w[i-1]] + v[i-1])
+     * else:
+     * m[i, j] := m[i-1, j]
+     */
     public static void main(String[] args) {
         int[] coins = {2, 2, 3, 7};
         int sum = 7;

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -20,8 +21,11 @@ public class CombSum {
                 if (coins[val] <= sum)
                     if (min[sum - coins[val]] != Integer.MAX_VALUE) {
                         min[sum] = 0;
-                        lists[sum].addAll(lists[sum - coins[val]]);
-                        lists[sum].add(coins[val]);
+                        // lists[sum].clear();
+                        List<Integer> nl = new ArrayList<>();
+                        nl.addAll(lists[sum - coins[val]]);
+                        nl.add(coins[val]);
+                        lists[sum].addAll(nl);
                     }
             }
         return lists[s];
