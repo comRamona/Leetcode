@@ -13,30 +13,36 @@ public class LevelDepths {
     }
 
     public void getLevels(List<List<Integer>> lists, TreeNode root, int lvl) {
-        if (root == null) return;
-        List<Integer> list = null;
-        if (lists.size() == lvl) {
-            list = new LinkedList<Integer>();
-            list.add(root.val);
-            lists.add(list);
-        } else {
-            list = lists.get(lvl);
-            list.add(root.val);
+        if (root != null) {
+            List<Integer> list;
+            if (lists.size() == lvl) {
+                list = new LinkedList<Integer>();
+                list.add(root.val);
+                lists.add(list);
+            } else {
+                list = lists.get(lvl);
+                list.add(root.val);
+            }
+            getLevels(lists, root.left, lvl + 1);
+            getLevels(lists, root.right, lvl + 1);
         }
-        getLevels(lists, root.left, lvl + 1);
-        getLevels(lists, root.right, lvl + 1);
     }
 
-    public void LevelOrder(Node root)  //using BFS
+    public void LevelOrder(TreeNode root)  //using BFS
     {
-        LinkedList<Node> queue = new LinkedList<Node>();
-        queue.add(root);
-        while (!queue.isEmpty()) {
-            Node n = queue.getFirst();
-            queue.removeFirst();
-            System.out.print(n.data + " ");
-            if (n.left != null) queue.add(n.left);
-            if (n.right != null) queue.add(n.right);
+        List<List<TreeNode>> lists = new ArrayList();
+        List<TreeNode> list = new ArrayList<>();
+        if (root != null) list.add(root);
+        while (list.size() > 0) {
+            lists.add(list);
+            List<TreeNode> parents = new ArrayList<>();
+            list = new ArrayList<>();
+            for (TreeNode parent : parents) {
+                if (parent.left != null)
+                    list.add(parent.left);
+                if (parent.right != null)
+                    list.add(parent.right);
+            }
         }
 
     }

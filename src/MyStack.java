@@ -15,14 +15,10 @@ public class MyStack<T> {
 
     //push is like inserting at the beginning
     public void push(T val) {
-        if (head == null)
-            head = new SNode(val);
-        else {
-            SNode a = new SNode(val);
-            a.next = head;
-            head = a;
+        SNode t = new SNode(val);
+        t.next = head;
+        head = t;
         }
-    }
 
     public T pop() {
         if (head == null) return null;
@@ -40,4 +36,6 @@ public class MyStack<T> {
         }
 
     }
+
+
 }
