@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by Rama on 10/08/2016.
  */
-public class Permutation {
+public class PermutationWithCache {
   int n;
   int[] array;
   boolean[] used;
@@ -38,7 +38,7 @@ public class Permutation {
   }
 
   public static void main(String[] args) {
-    Permutation permutation=new Permutation(new int[] {2, 6, 1});
+    Permutation permutation=new PermutationWithCache(new int[] {2, 6, 1});
     permutation.permute();
   }
 }
